@@ -70,5 +70,5 @@ orders.customer_firstname AS 'Firstname',
 orders.price AS 'Order Price', 
 categories.category_name AS 'Category', 
 promotions.discount AS 'Discounted by'
-FROM categories,orders LEFT OUTER JOIN promotions ON orders.promo_code = promotions.code
-WHERE category_id = categories.id
+FROM promotions,orders LEFT OUTER JOIN categories ON category_id = categories.id
+WHERE orders.promo_code = promotions.code
